@@ -1,0 +1,1 @@
+export const BRAND: string[] = ["Puma", "Reebok", "Nike", "Fila", "Converse", "ZOU XOU", "Rebecca Allen"];

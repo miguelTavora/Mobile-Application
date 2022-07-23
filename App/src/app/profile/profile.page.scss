@@ -1,0 +1,109 @@
+.img-profile {
+    position: relative;
+    //left: 25%;
+    width: 250px;
+    height: 250px;
+    margin-top: 5%;
+
+    border: 1px solid #000000;
+    border-radius: 50%;
+}
+
+.email {
+    position: absolute;
+    width: 100%;
+    height: 39px;
+    top: 303px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+
+
+    color: #000000;
+}
+
+.new-product {
+    position: absolute;
+    width: 80%;
+    height: 61px;
+    left: 10%;
+    top: 48%;
+
+    background: rgba(185, 131, 178);
+    border-radius: 62px;
+}
+
+.text-selectors {
+
+    margin: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    margin-left: 60px;
+    
+    padding-top: 14px;
+
+    color: #000000;
+}
+
+.circle-icon {
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    margin-top: 8px;
+    margin-left: 8px;
+
+    border: 1px solid #000000;
+}
+
+.icon {
+    width:45px;
+    height:45px;
+}
+
+.title {
+    position: absolute;
+    width: 80%;
+    height: 36px;
+    left: 10%;
+    top: 88%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #000000;
+}
+
+.input-line {
+    border: 0px;
+    border-bottom: 2px solid black;
+
+    position: absolute;
+    width: 67%;
+    height: 35px;
+    left: 105px;
+    outline: none;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.empty {
+    height: 30px;
+    width: 100%;
+    top: 155%;
+    position: absolute;
+}

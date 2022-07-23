@@ -1,0 +1,35 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
+<ion-content>
+  <div style="position: relative; text-align: center;">
+    <img style="position: absolute; margin-top: 15px;" src="assets/logo2.png" />
+    <img  src="assets/ellipse.svg" />
+
+    <div class="line"></div>
+    <div class="continue">Sign up</div>
+    <div class="line" style="left: 72%; width: 20%;"></div>
+
+    <input class="input" [(ngModel)]="info.email" placeholder="Email"/>
+    <p *ngIf="warnings[0]" class="not-correct" style="top: 70%;margin-top: 48px;" >Email not in the correct format</p>
+
+
+    <input class="input" type="password" [(ngModel)]="info.password" style="top: 95%;" placeholder="Pasword"/>
+    <p *ngIf="warnings[1]" style="top: 95%;margin-top: 48px;" class="not-correct" >Password must have at least 6 characters</p>
+
+
+    <button type="submit" class="login" (click)="GoToHomepage()">LOGIN</button>
+
+    <p *ngIf="warnings[2]" class="not-correct" style="top: 148%;">The email or the password are not correct</p>
+
+    <div class="account" style="text-decoration: underline" (click)="GoToRegister()">
+      You don't have account? SIGN UP
+    </div>
+
+  </div>
+
+  
+  
+</ion-content>

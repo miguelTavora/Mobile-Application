@@ -1,0 +1,57 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<ion-content>
+
+  <div class="top" style="overflow:auto;">
+    <p class="text">Wishlist</p>
+
+    <p class="text" style="float:right;">Basket({{list2.length}})</p>
+
+  </div>
+
+  <div class="content" [ngStyle]="{'background-color': warning == true ? 'gray' : 'white'}">
+
+    <div class="content-2" *ngFor="let item of list2; let i = index">
+      <div style="padding-top: 20px;">
+
+        <!--Warning apagar-->
+        <div class="confirm" *ngIf="confirms[i] == true">
+          <p class="confirm-text">Are you sure that you want to remove the product</p>
+          <button class="confirm-btn" (click)="ConfirmDelete(item)">Confirm</button>
+          <button class="confirm-btn" (click)="CancelDelete(item)"
+            style="background: #F74F4F;left: 15%;">Cancel</button>
+        </div>
+        <img class="img" [src]="item.img">
+
+        <p class="text-content" style="margin-top: 10px;margin-bottom: 10px;">{{item.title}}</p>
+        <div>
+          <p class="text-content-2 text-two">Number: {{item.size}}</p>
+          <p class="text-content-2 text-two">Color: {{item.color}}</p>
+        </div>
+        <div>
+          <p class="text-content-2 text-two">Price: {{item.price}}.00EUR</p>
+          <p class="text-content-2 text-two">Quantity: {{item.quantity}}</p>
+        </div>
+
+        <button class="delete" (click)="DeleteItem(item)">Delete</button>
+
+      </div>
+      <!--<div class="img">
+        <img  src="../assets/img1.png">
+      </div>
+      <p class="text-content" style="margin-top: 35px;">Nike Winflo Road Running</p>
+      <div>
+        <p class="text-content text-two" >Number: 42</p>
+        <p class="text-content text-two" >Color: Black</p>
+      </div>
+      <div>
+        <p class="text-content text-two" >Price: 25.00EUR</p>
+        <p class="text-content text-two" >Quantity: 1</p>
+      </div>-->
+    </div>
+  </div>
+
+
+</ion-content>

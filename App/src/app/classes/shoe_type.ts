@@ -1,0 +1,1 @@
+export const SHOE_TYPE: string[] = ["Boats", "Ballet flats", "Flip flops", "Oxford shoes", "Sandals", "Trainers"];

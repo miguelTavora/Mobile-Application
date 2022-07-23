@@ -1,0 +1,87 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+<ion-content [fullscreen]="true">
+  <div style="text-align: center;position: relative;">
+    <img style="margin-left: 1%;" src="assets/logo.png" />
+  </div>
+
+  <div>
+    <button class="button" (click)="FilterShow('Woman')">Woman</button>
+    <button class="button" (click)="FilterShow('Man')" style="background: rgba(175, 202, 229);left: 38%;" >Man</button>
+    <button class="button" (click)="FilterShow('Kid')" style="background: rgba(164, 181, 215);left: 66%;" >Kid</button>
+  </div>
+
+  <input class="input-line" placeholder="Search by name" [(ngModel)]="info.name" 
+      (keypress)="NameSearch($event.keyCode)" />
+
+  <div class="title">Price</div>
+
+  <input class="input-line" style="width: 35%;top: 355px;" (keypress)="PriceMinSearch($event.keyCode)"
+      [(ngModel)]="info.minimum" placeholder="Minimum" />
+
+  <input class="input-line" style="width: 35%;top: 355px;left: 55%;" (keypress)="PriceMaxSearch($event.keyCode)"
+      [(ngModel)]="info.maximum" placeholder="Maximum" />
+
+  <div class="title" style="top: 430px;">Type of wearshoes</div>
+
+  <div *ngFor="let type of shoeTypes;let indexOfelement=index;">
+    <div (click)="TypeShoe(type)" class="type-shoes" [ngStyle]="{'top.px': 490 +((indexOfelement * 35))}">{{type}}</div>
+    <!--<div class="type-shoes">Boasts</div>
+    <div class="type-shoes" style="top: 69%;">Ballet flats</div>-->
+    <!--<div class="type-shoes">Boasts</div>
+    <div class="type-shoes">Boasts</div>
+    <div class="type-shoes">Boasts</div>-->
+  </div>
+
+  <div class="title" style="top: 720px;">Brand</div>
+
+  <div>
+    <img src="../assets/puma.png" (click)="BrandShoe('Puma')" class="brand"/>
+    <img src="../assets/reebok.png" (click)="BrandShoe('Reebok')" class="brand" style="left: 40%;background-color: white;"/>
+    <img src="../assets/nike.jpg" (click)="BrandShoe('Nike')" class="brand" style="left: 70%;"/>
+    <img src="../assets/fila.png" (click)="BrandShoe('Fila')" class="brand" style="margin-top:85px;"/>
+    <img src="../assets/converse.png" (click)="BrandShoe('Converse')" class="brand" style="margin-top:85px;left: 40%;background-color: white;"/>
+    <img src="../assets/zouxou.png" (click)="BrandShoe('ZOU XOU')" class="brand" style="margin-top:85px;left: 70%;"/>
+    <img src="../assets/rebecca.png" (click)="BrandShoe('Rebecca Allen')" class="brand" style="margin-top:170px;"/>
+  </div>
+
+
+  <div class="title" style="top: 1050px;">Color</div>
+
+  <div>
+    <div (click)="ColorShoe('Red')" class="color" style="background-color: red;">
+      <p class="font-roboto text-center">Red</p>
+    </div>
+    <div (click)="ColorShoe('Orange')" class="color" style="background-color: orange;left: 40%;">
+      <p class="font-roboto text-center">Orange</p>
+    </div>
+    <div (click)="ColorShoe('Yellow')" class="color" style="background-color: yellow;left: 70%;">
+      <p class="font-roboto text-center">Yellow</p>
+    </div>
+    <div (click)="ColorShoe('Green')" class="color" style="background-color: green;margin-top:85px;">
+      <p class="font-roboto text-center">Green</p>
+    </div>
+    <div (click)="ColorShoe('Blue')" class="color" style="background-color: blue;margin-top:85px;left: 40%;">
+      <p class="font-roboto text-center">Blue</p>
+    </div>
+    <div (click)="ColorShoe('Violet')" class="color" style="background-color: violet;margin-top:85px;left: 70%;">
+      <p class="font-roboto text-center">Violet</p>
+    </div>
+    <div (click)="ColorShoe('Black')" class="color" style="background-color: black;margin-top:170px;color: white;">
+      <p class="font-roboto text-center">Black</p>
+    </div>
+    <div (click)="ColorShoe('Gray')" class="color" style="background-color: gray;margin-top:170px;left: 40%;">
+      <p class="font-roboto text-center">Gray</p>
+    </div>
+    <div (click)="ColorShoe('White')" class="color" style="background-color: white;margin-top:170px;left: 70%;">
+      <p class="font-roboto text-center">White</p>
+    </div>
+  </div>
+
+  <div style="height:80px; width: 100%;position: absolute;top: 1350px"></div>
+
+</ion-content>

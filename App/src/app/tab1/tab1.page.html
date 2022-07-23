@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row *ngFor="let shoe of shoes1">
+
+      <ion-col width-50 *ngIf="shoe.length > 1;">
+        <app-card [shoe] = "shoe[0]" ></app-card>
+      </ion-col>
+
+      <ion-col size="6" *ngIf="shoe.length < 2;">
+        <app-card [shoe] = "shoe[0]" ></app-card>
+      </ion-col>
+
+
+      <!--if statement, if dont have any more shoes dont show-->
+      <ion-col width-50 *ngIf="shoe.length > 1;">
+        <app-card [shoe] = "shoe[1]" ></app-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <!--<ion-row *ngFor="let shoe of shoes">
+        <ion-col width-50>
+            <ion-card style="text-align: center !important;">
+                <img src="../assets/img1.png"/>
+                <div class="text-img">
+                  <p class="margins">Nike Winflo Road Running</p>
+                </div>
+                <div class="text-img">
+                  <p class="margins" style="font-size: 13px;">25.00 EUR</p>
+                </div>
+            </ion-card>
+        </ion-col>
+        <ion-col width-50>
+          <ion-card>
+            <img src="../assets/img4.png"/>
+            <div class="card-title">Amsterdam</div>
+            <div class="card-subtitle">64 Listings</div>
+          </ion-card>
+        </ion-col>
+    </ion-row>-->
+
+  <!--<ion-row>
+      <ion-col width-50>
+          <ion-card>
+            <img src="../assets/img5.png"/>
+            <div class="card-title">San Francisco</div>
+            <div class="card-subtitle">72 Listings</div>
+          </ion-card>
+      </ion-col>
+    </ion-row>-->
+
+</ion-content>

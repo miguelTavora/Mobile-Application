@@ -1,0 +1,29 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
+<ion-content>
+  <div style="position: relative; text-align: center;">
+    <img style="position: absolute; margin-top: 15px;" src="assets/logo2.png" />
+    <img  src="assets/ellipse.svg" />
+
+    <div (click)="GoogleLogin()" class="round-box"><!---->
+      <img class="google-img" src="assets/google.png" />
+      <h2 class="google-text">Sign in with Google</h2>
+    </div>
+
+    <p *ngIf="warning" class="not-correct" >Google login was not completed</p>
+
+    <div class="line"></div>
+    <div class="continue">or continue with</div>
+    <div class="line" style="left: 72%"></div>
+
+    <div class="round-box email" (click)="GoToLoginEmail()">
+      <img class="google-img" src="assets/mail.png" style="width: 22%;height: 75%;left: 1%"/>
+      <h2 class="google-text" >Login with email</h2>
+    </div>
+
+  </div>
+</ion-content>

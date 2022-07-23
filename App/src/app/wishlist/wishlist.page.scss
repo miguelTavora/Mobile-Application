@@ -1,0 +1,116 @@
+.top {
+    position: absolute;
+    width: 90%;
+    height: 45px;
+    top: 2%;
+    left: 5%;
+
+    display: inline-block;
+}
+
+
+.text {
+    margin: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+
+    display: inline-block;
+
+    color: #000000;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    top: 10%;
+}
+
+.content-2 {
+    position: relative;
+    width: 90%;
+    left: 5%;
+}
+
+.img {
+    width: 100%;
+    height: 211px;
+    border-radius: 20px;
+}
+
+.text-content {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.text-content-2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.text-two {
+    margin-top: 0px;
+    width: 50%;
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.delete {
+    width: 109px;
+    height: 30px;
+
+
+    background: #FB8989;
+    border-radius: 6px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.confirm {
+    position: absolute;
+    width: 100%;
+    height: 286px;
+
+    background: #F8F8F8;
+    border-radius: 20px;
+    border-color: #000000;
+}
+
+.confirm-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    
+}
+
+.confirm-btn {
+    position: relative;
+    width: 40%;
+    height: 40px;
+    left: 5%;
+    margin-top: 40px;
+
+    background: #4FF7A6;
+    border-radius: 6px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}

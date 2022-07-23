@@ -1,0 +1,63 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<ion-content>
+  <img [src]="product.photo" class="img">
+
+  <p class="title">{{product.name}}</p>
+
+  <p class="price">{{product.price}}.00 EUR</p>
+
+  <div (click)="AddToWish()" class="add-wish">
+    <p class="container">Add to Wishlist</p>
+  </div>
+
+  <div class="color" *ngIf="warningNumber"
+    style="position: absolute; font-size: 20px;color: red; margin: 0px;margin-top: 3px;left:5%;">Must select a size</div>
+
+  <div class="color" *ngIf="warningSuccess"
+    style="position: absolute; font-size: 20px;color: green; margin: 0px;margin-top: 3px;left:5%;">Success add item to wishlist</div>
+
+  <div class="add-wish" style="background: rgba(219, 198, 128);">
+    <p class="container" style="left: 77%;">Buy product</p>
+  </div>
+
+
+  <div *ngIf="!product.stock" class="stock">
+    <p class="text-stock">Product don't have stock</p>
+  </div>
+
+  <div *ngIf="product.stock" class="stock">
+    <p class="text-stock" style="color: green;left: 18%;">Product have stock</p>
+  </div>
+
+  <div class="color">Color</div>
+
+  <div *ngFor="let colorSel of product.colors; let i = index">
+
+    <div class="color-cirlce" style="border: 1px solid #000000;" [style.background-color]="colorSel" [style.left.%]="((i*30)%90)+10">
+      
+      <p [style.color]="colorSel != 'Black' ? 'black' : 'white'" class="font-roboto text-center">{{colorSel}}</p>
+    </div>
+  </div>
+
+  <div class="color" style="margin-top: 130px;">Shoe sizes available</div>
+
+  <div *ngFor="let size of product.sizes; let i = index">
+
+    <div (click)="SetSelectedNumber(size)" [style.border]="selectedNumber != size ? '1px solid #000' : '1px solid red'"
+      class="color-cirlce" [style.top.px]="(numbers[i] *90)+948" 
+      style="background: #C4C4C4;" [style.left.%]="((i*30)%90)+10">
+      <p class="font-roboto text-center" style="font-size: 32px;">{{size}}</p>
+    </div>
+
+  </div>
+
+  <div class="color" style="margin-top: 240px;">Description</div>
+
+  <div class="color" style="margin-top: 20px;font-size: 20px;padding-right: 6%;margin-bottom: 50px;">{{product.description}}</div>
+
+  <div class="color" style="margin-top: 100px;"></div>
+
+</ion-content>

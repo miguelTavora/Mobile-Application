@@ -1,0 +1,95 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<ion-content>
+  <div style="position: relative;">
+    <img style="position: relative;" src="assets/logo.png" />
+
+    <div class="continue">Edit localization</div>
+
+    
+
+    <div class="dropdown">
+      <div class="dropbtn input" (click)="ShowCountrys()">
+        <p class="text-select">{{countrySelected}}
+          <ion-icon name={{arrowDownCountry}} style="float: right;padding-right: 5px;"></ion-icon>
+        </p>
+        <div *ngFor="let country of countrys">
+          <div class="dropdown-item" [ngClass]="[showCountry]" (click)="ChangeCountry(country)">
+            <p class="text-select">{{country}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p *ngIf="countrySelected == 'Country' && clicked" style="display: block; z-index: -2;"
+      class="not-correct">You must choose the country</p>
+
+    <div class="dropdown" style="margin-top: 150px;">
+      <div class="input" (click)="ShowDistricts()" style="z-index:-1;">
+        <p class="text-select">{{districtSelected}}
+          <ion-icon name={{arrowDownDistricts}} style="float: right;padding-right: 5px;"></ion-icon>
+        </p>
+
+        <div *ngIf="countrySelected != 'Country'">
+          <div class="dropdown-item" [ngClass]="[showDistrict]"
+            (click)="ChangeDistrict(districts.get(countrySelected)[0])">
+            <p class="text-select">{{districts.get(countrySelected)[0]}}</p>
+          </div>
+          <div class="dropdown-item" [ngClass]="[showDistrict]"
+            (click)="ChangeDistrict(districts.get(countrySelected)[1])">
+            <p class="text-select">{{districts.get(countrySelected)[1]}}</p>
+          </div>
+          <div class="dropdown-item" [ngClass]="[showDistrict]"
+            (click)="ChangeDistrict(districts.get(countrySelected)[2])">
+            <p class="text-select">{{districts.get(countrySelected)[2]}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p *ngIf="districtSelected == 'District' && clicked" 
+      class="not-correct" style="display: block; z-index: -2;">You must choose the district</p>
+
+    <input type="text" class="input" [(ngModel)]="info.postalCode" 
+    style="top: 216%;display: block; z-index: -2;" placeholder="Postal code" required />
+
+    <p *ngIf="confirms[0]" class="not-correct" style="top: 216%;margin-top: 50px;display: block; z-index: -2;">You must write the postal code</p>
+
+    <textarea rows="6" cols="50" [(ngModel)]="info.address" class="input"
+      style="top: 259%;height: 130px;display: block; z-index: -2;" placeholder="Address"></textarea>
+
+    <p *ngIf="confirms[1]" class="not-correct" style="top: 259%;margin-top: 130px;
+      display: block; z-index: -2;">You must write the address</p>
+
+    <button type="submit" class="login" (click)="SubmitChanges()">SUBMIT</button>
+
+
+    <div *ngIf="warning" class="confirm">
+      <div class="x" (click)="ClosePopUp()">X</div>
+      <p class="check">Check before confirm</p>
+
+      <p class="country">District:</p>
+      <p class="country2">{{countrySelected}}</p>
+      <div class="line"></div>
+
+      <p class="country" style="top: 220px;">Country:</p>
+      <p class="country2" style="top: 220px;">{{districtSelected}}</p>
+      <div class="line" style="top: 280px;"></div>
+
+      <p class="country" style="top: 300px;">Postal code:</p>
+      <p class="country2" style="top: 285px;">{{info.postalCode}}</p>
+      <div class="line" style="top: 360px;"></div>
+
+      <p class="country" style="top: 380px;">Address:</p>
+      <p class="country2" style="top: 365px;">{{info.address}}</p>
+      <div class="line" style="top: 470px;"></div>
+
+      <button (click)="ConfirmPopUp()" type="submit" class="confirm-check">Confirm</button>
+    </div>
+
+  </div>
+  <div style="top: 107%; height:15px; width: 100%;position: absolute;"></div>
+</ion-content>

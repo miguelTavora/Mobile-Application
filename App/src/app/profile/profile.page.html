@@ -1,0 +1,76 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<ion-content>
+  <div style="text-align: center;position: relative;">
+    <img src="../assets/profile2.png" class="img-profile" />
+  </div>
+
+  <div class="email" style="text-align: center">
+    {{profile.email}}
+  </div>
+
+  <div *ngIf="ADMIN_EMAIL.indexOf(profile.email) != -1" class="new-product">
+    <div class="circle-icon">
+      <ion-icon name="add" class="icon"></ion-icon>
+    </div>
+    <p class="text-selectors">Add new product</p>
+  </div>
+
+  <div *ngIf="ADMIN_EMAIL.indexOf(profile.email) != -1" 
+      class="new-product" style="top: 60%;background: rgba(175, 202, 229);">
+    <div class="circle-icon">
+      <ion-icon name="remove" class="icon"></ion-icon>
+    </div>
+    <p class="text-selectors">Remove product</p>
+  </div>
+
+  <div *ngIf="ADMIN_EMAIL.indexOf(profile.email) != -1" 
+      class="new-product" (click)="ChangeStock()" style="top: 72%;background: rgba(164, 181, 215);">
+    <div class="circle-icon">
+      <ion-icon name="cube" style="width: 43px; height: 43px;"></ion-icon>
+    </div>
+    <p class="text-selectors">Change stock</p>
+  </div>
+
+  <div class="title">Localization</div>
+
+  <div class="title" style="font-size: 24px;top: 95%;">
+    Country:
+    <input type="text" class="input-line"  value={{profile.country}} readonly/>
+  </div>
+
+  <div class="title" style="font-size: 24px;top: 101%;">
+    District:
+    <input type="text" class="input-line"  value={{profile.district}} readonly/>
+  </div>
+
+  <div class="title" style="font-size: 24px;top: 107%;">
+    Postal code:
+    <input type="text" class="input-line" style="left: 145px;width: 54%;" value={{profile.postalCode}} readonly/>
+  </div>
+
+  <div class="title" style="font-size: 24px;top: 113%;height: 90px">
+    Address:
+    <input type="text" class="input-line" value={{address1}} readonly/>
+    <input type="text" class="input-line" style="margin-top: 40px;width: 99%;left:0%" value={{address2}} readonly/>
+  </div>
+
+  <div class="new-product" (click)="ChangeEditProfile()" style="top: 130%;background: #4D4949;;">
+    <div class="circle-icon" style="border: 1px solid #fff;">
+      <img src="../assets/localization.png" style="width: 45px; height: 45px;" />
+    </div>
+    <p class="text-selectors" (click)="ChangeEditProfile()" style="color: #fff">Edit Localization</p>
+  </div>
+
+  <div class="new-product" (click)="Logout()" style="top: 142%;background: #EE6B6E;;">
+    <div class="circle-icon" style="border: 1px solid #fff;">
+      <ion-icon name="log-out" style="padding-left:4px;padding-top: 1px; width: 41px; height: 41px;color: white"></ion-icon>
+    </div>
+    <p class="text-selectors" (click)="ChangeEditProfile()" style="color: #fff">Logout</p>
+  </div>
+
+  <div class="empty"></div>
+
+</ion-content>

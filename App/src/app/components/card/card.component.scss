@@ -1,0 +1,28 @@
+img {
+    width: 250px;
+    height: 120px;
+    /*flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;*/
+}
+
+ion-card {
+    text-align: center !important;
+}
+
+.text-img {
+    text-align: left !important;
+    color: black !important;
+    font-size: 15px !important;
+}
+
+.margins {
+    margin-top: 2px !important;
+    margin-bottom: 5px !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+.small-text {
+    font-size: 13px;
+}

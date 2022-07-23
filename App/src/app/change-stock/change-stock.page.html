@@ -1,0 +1,47 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<ion-content>
+  <div style="text-align: center;position: relative;">
+    <img style="margin-left: 1%;" src="assets/logo.png" />
+  </div>
+
+
+  <div class="continue">Change Stock</div>
+  
+  <div class="dropdown">
+    <div class="dropbtn input" (click)="ShowShoes()">
+      <p class="text-select">{{shoeSelected}}
+        <ion-icon name={{arrowDownCountry}} style="float: right;padding-right: 5px;"></ion-icon>
+      </p>
+      <div *ngFor="let shoe of shoes2">
+        <div class="dropdown-item" [ngClass]="[showCountry]" (click)="ChangeShoe(shoe)">
+          <p class="text-select" style="font-size: 18px">{{shoe.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="warningProduct" style="display: block; z-index: -2;margin-top: 140px;"
+      class="not-correct">You must choose the product</p>
+
+  <div style="position: relative;margin-top: 250px;margin-left: 25%;display: block; z-index: -2;">
+    <input type="radio" [(ngModel)]="info.stock" (click)="SetHasStock(true)" id="age1" name="age" value="1">
+    <label class="label" for="age1">Have stock</label><br>
+  </div>
+
+  <div style="position: relative;margin-left: 25%;margin-top: 50px;display: block; z-index: -2;">
+    <input type="radio" [(ngModel)]="info.noStock" (click)="SetHasStock(false)" id="age2" name="age" value="2">
+    <label class="label" for="age2">Don't have stock</label><br> 
+  </div>
+
+  <p *ngIf="warningStock" style="position: relative;display: block; z-index: -2;text-align: center;left: 0;margin-top: 30px;"
+      class="not-correct">You must choose the stock</p>
+
+  <button (click)="Submit()" type="submit" class="login" style="display: block; z-index: -2;">SUBMIT</button>
+  
+  <p *ngIf="successWarning" style="position: relative;display: block; z-index: -2;text-align: center;left: 0;margin-top: 30px;"
+      class="success">Success changing the stock</p><!---->
+
+</ion-content>

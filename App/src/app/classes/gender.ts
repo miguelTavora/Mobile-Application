@@ -1,0 +1,1 @@
+export const GENDER: string[] = ["Man", "Woman", "Kid"];

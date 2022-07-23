@@ -1,0 +1,127 @@
+.continue {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    height: 24px;
+
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 24px;
+
+    color: #000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown-show {
+    display: block;
+}
+
+.dropdown-item {
+    box-sizing: border-box;
+
+    position: relative;
+    width: 100%;
+    height: 52px;
+    left: 0px;
+    top: 10px;
+    background-color: white;
+
+    border: 1px solid #000000;
+    border-radius: 6px;
+}
+
+.text-select {
+    margin: 0px;
+    padding-top: 13px;
+    padding-left: 2px;
+}
+
+.input {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 90%;
+    height: 50px;
+    left: 5%;
+    top: 80px;
+    text-align: left;
+    font-size: 22px;
+
+    color: black;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 6px;
+}
+
+.input::placeholder{
+    font-size: 26px; 
+    color: gray;
+}
+
+.label {
+    margin-left: 10px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.middle {
+    margin: auto;
+    display: block;
+}
+
+.login {
+    box-sizing: border-box;
+
+    position: relative;
+    width: 50%;
+    height: 52px;
+    left: 25%;
+    margin-top: 100px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    background: #F8D49E;
+    border: 1px solid #000000;
+    border-radius: 33px;
+}
+
+.not-correct {
+    position: absolute;
+    margin-top: 50px;
+    left:5%;
+
+    color: red;
+}
+
+.success {
+    position: relative;
+    margin-top: 50px;
+    left:5%;
+
+    color: green;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+}

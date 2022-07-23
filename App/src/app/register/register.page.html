@@ -1,0 +1,94 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
+<ion-content>
+  <div style="position: relative; text-align: center;">
+    <img style="position: absolute; margin-top: 15px;" src="assets/logo2.png" />
+    <img  src="assets/ellipse.svg" />
+
+    <div class="line"></div>
+    <div class="continue">Register</div>
+    <div class="line" style="left: 72%; width: 20%;"></div>
+
+    <input class="input" [(ngModel)]="info.email" placeholder="Email"/>
+    <p *ngIf="warnings[0]" class="not-correct" style="top: 55%;margin-top: 47px;" >Email not in the correct format</p>
+
+
+    <input type="password" class="input" [(ngModel)]="info.password" style="top: 70%;" placeholder="Pasword"/>
+    <p *ngIf="warnings[1]" style="top: 70%;margin-top: 47px;" class="not-correct" >Password must have at least 6 characters</p>
+
+    <input type="password" class="input" [(ngModel)]="info.confirmPassword" style="top: 85%;" placeholder="Confirm Pasword"/>
+    <p *ngIf="warnings[2]" style="top: 85%;margin-top: 47px;" class="not-correct" >At least 6 characters and match password</p>
+
+    <div class="dropdown">
+      <div class="dropbtn input" (click)="ShowCountrys()">
+        <p class="text-select">{{countrySelected}}
+          <ion-icon name={{arrowDownCountry}} style="float: right;padding-right: 5px;"></ion-icon>
+        </p>
+        <div *ngFor="let country of countrys">
+          <div class="dropdown-item" [ngClass]="[showCountry]" (click)="ChangeCountry(country)">
+            <p class="text-select">{{country}}</p>
+          </div>
+          <!--<div class="dropdown-item" [ngClass]="[showCountry]" (click)="ChangeCountry('Spain')">
+            <p class="text-select">Spain</p>
+          </div>
+          <div class="dropdown-item" [ngClass]="[showCountry]" (click)="ChangeCountry('France')">
+            <p class="text-select">France</p>
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+    <p *ngIf="warnings[3]" style="top: 100%;margin-top: 47px;display: block; z-index: -2;" class="not-correct" >You must select a country</p>
+
+    <div class="dropdown" style="margin-top: 19%">
+      <div class="input" (click)="ShowDistricts()" style="z-index:-1;">
+        <p class="text-select">{{districtSelected}}
+            <ion-icon name={{arrowDownDistricts}} style="float: right;padding-right: 5px;"></ion-icon>
+        </p>
+        
+        <div *ngIf="countrySelected != 'Country'">
+          <div class="dropdown-item"  [ngClass]="[showDistrict]" (click)="ChangeDistrict(districts.get(countrySelected)[0])">
+            <p class="text-select">{{districts.get(countrySelected)[0]}}</p>
+          </div>
+          <div class="dropdown-item" [ngClass]="[showDistrict]" (click)="ChangeDistrict(districts.get(countrySelected)[1])">
+            <p class="text-select">{{districts.get(countrySelected)[1]}}</p>
+          </div>
+          <div class="dropdown-item" [ngClass]="[showDistrict]" (click)="ChangeDistrict(districts.get(countrySelected)[2])">
+            <p class="text-select">{{districts.get(countrySelected)[2]}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p *ngIf="warnings[4]" style="top: 115%;margin-top: 47px;display: block; z-index: -2;" class="not-correct" >You must select a district</p>
+
+    <input [(ngModel)]="info.postalCode" class="input" style="top: 130%;display: block; z-index: -2;" 
+          placeholder="Postal code"/>
+
+    <p *ngIf="warnings[5]" style="top: 130%;margin-top: 47px;display: block; z-index: -2;" 
+        class="not-correct" >You must write a postal code (4 characters)</p>
+
+    <textarea [(ngModel)]="info.address" rows="6" cols="50" class="input" 
+        style="top: 145%;height: 130px;display: block; z-index: -2;" placeholder="Address"></textarea>
+
+    <p *ngIf="warnings[6]" style="top: 145%;margin-top: 132px;display: block; z-index: -2;" 
+        class="not-correct" >You must write the address (4 characters)</p>
+
+    <button (click)="Submit()" type="submit" class="login">SIGN UP</button>
+
+    <p *ngIf="errorMessage" class="error-sub" >The email already exists</p>
+    <p *ngIf="successMessage" class="error-sub" style="color:green;left:18%" >Success creating the account<br>Go to login</p>
+
+    <div class="account" style="text-decoration: underline" (click)="GoToLogin()">
+      Already have an account? LOGIN
+    </div>
+
+  </div>
+
+  
+  
+</ion-content>
