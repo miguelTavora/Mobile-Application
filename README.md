@@ -15,7 +15,7 @@ The technologies used is:
 Some resulting pages are:
 <table>
   <tr>
-    <td><img src="./markdown_images/homepage.png" alt="drawing" width="220" /></td>
+    <td><img src="./markdown_images/homepage.png" alt="drawing" width="240" /></td>
     <td><img src="./markdown_images/profile.png" alt="drawing"width="240"/></td>
     <td><img src="./markdown_images/filters.png" alt="drawing"width="240"/></td>
 </tr>
@@ -28,7 +28,7 @@ Some resulting pages are:
 
 <table>
   <tr>
-    <td><img src="./markdown_images/whislist.png" alt="drawing" width="220" /></td>
+    <td><img src="./markdown_images/whislist.png" alt="drawing" width="240" /></td>
     <td><img src="./markdown_images/product_details.png" alt="drawing"width="240"/></td>
     <td><img src="./markdown_images/product-details2.png" alt="drawing"width="240"/></td>
 </tr>
